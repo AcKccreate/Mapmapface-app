@@ -1,0 +1,35 @@
+name: Locum Agent Daily
+
+on:
+  schedule:
+    - cron: "0 14 * * 1-5"   # 08:00 AM MT (Mon–Fri)
+    - cron: "30 21 * * 1-5"  # 03:30 PM MT (Mon–Fri)
+    - cron: "0 8 * * *"      # 02:00 AM MT daily data refresh
+  workflow_dispatch:
+
+jobs:
+  run-daily:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Train & Score
+        env:
+          RED_THRESHOLD: "0.70"
+        run: |
+          python app/scripts/train_predictor.py
+      - name: Send Digest (SendGrid)
+        env:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+          DIGEST_TOP_N: "20"
+        run: |
+          python app/scripts/send_digest_sendgrid.py
