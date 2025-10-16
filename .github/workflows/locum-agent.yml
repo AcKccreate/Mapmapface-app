@@ -40,4 +40,9 @@ jobs:
           MAIL_FROM: ${{ secrets.MAIL_FROM }}
           DIGEST_TOP_N: "20"
         run: |
+          if [ -z "${SENDGRID_API_KEY:-}" ] || [ -z "${MAIL_FROM:-}" ]; then
+            echo "Skipping Send Digest: SENDGRID_API_KEY or MAIL_FROM secret is not set."
+            echo "To enable: add repository secrets 'SENDGRID_API_KEY' and 'MAIL_FROM'."
+            exit 0
+          fi
           python app/scripts/send_digest_sendgrid.py
