@@ -6,3 +6,4 @@ folium
 email-validator
 scikit-learn
 sendgrid
+statsmodels
