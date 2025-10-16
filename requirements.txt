@@ -7,3 +7,12 @@ email-validator
 scikit-learn
 sendgrid
 statsmodels
+streamlit
+pandas
+openpyxl
+geopy
+folium
+email-validator
+scikit-learn
+sendgrid
+statsmodels
