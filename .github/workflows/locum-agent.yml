@@ -26,6 +26,14 @@ jobs:
           RED_THRESHOLD: "0.70"
         run: |
           python app/scripts/train_predictor.py
+      - name: Debug secrets (safe)
+        # This step prints a safe indicator: the length of the API key and the MAIL_FROM value.
+        # It does NOT print the API key itself. Useful for diagnosing missing/empty secrets in Actions.
+        env:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+        run: |
+          echo "KEY_LEN=${#SENDGRID_API_KEY:-0} MAIL_FROM=${MAIL_FROM:-<not set>}"
       - name: Send Digest (SendGrid)
         env:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
