@@ -1,1 +1,8 @@
 streamlit
+pandas
+openpyxl
+geopy
+folium
+smtplib
+email-validator
+scikit-learn

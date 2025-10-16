@@ -1,0 +1,4 @@
+facility_id,specialty,contact_rank,first_name,last_name,title,email,phone,ext,mobile,last_verified
+BRGH-UT-001,HO,1,Jane,Doe,Dir. of Hospital Medicine,jane.doe@example.com,801-555-0100,,801-555-0101,2025-10-01
+BRGH-UT-001,HO,2,John,Smith,HR Recruiter,john.smith@example.com,801-555-0200,,801-555-0201,2025-09-20
+BRGH-UT-002,PDH,1,Alice,Brown,Chief Pediatric Nurse,alice.brown@example.com,801-555-0300,,801-555-0301,2025-09-15

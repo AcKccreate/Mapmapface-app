@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <style>
+      .window { fill: #1e1e1e; stroke: #333; stroke-width:2 }
+      .sidebar { fill: #252526 }
+      .editor { fill: #1e1e1e }
+      .label { fill: #fff; font-family: Arial, sans-serif; font-size:14px }
+      .arrow { fill: none; stroke: #ffcc00; stroke-width:6; stroke-linecap:round; stroke-linejoin:round }
+      .box { fill:#2d2d2d; stroke:#3a3a3a }
+      .hint { fill:#ffcc00; font-weight:700 }
+    </style>
+  </defs>
+  <!-- Window -->
+  <rect x="6" y="6" width="788" height="438" rx="6" class="window"/>
+
+  <!-- Left sidebar (Explorer) -->
+  <rect x="20" y="40" width="180" height="370" rx="4" class="sidebar" />
+  <!-- Explorer icon list -->
+  <g transform="translate(35,60)">
+    <rect x="0" y="0" width="28" height="28" rx="4" class="box"/>
+    <rect x="0" y="48" width="28" height="28" rx="4" class="box"/>
+    <rect x="0" y="96" width="28" height="28" rx="4" class="box"/>
+  </g>
+
+  <!-- Main editor area -->
+  <rect x="210" y="40" width="560" height="370" rx="4" class="editor" />
+
+  <!-- Files list mockup inside Explorer -->
+  <g transform="translate(70,60)" fill="#d4d4d4" font-family="Arial">
+    <text x="0" y="14" font-size="14">Mapmapface-app/</text>
+    <text x="0" y="40" font-size="12">app/</text>
+    <text x="0" y="60" font-size="12">app/data/</text>
+    <text x="0" y="80" font-size="12">app/data/processed/</text>
+    <text x="0" y="100" font-size="12">facility_features.csv</text>
+  </g>
+
+  <!-- Drop target highlight -->
+  <rect x="30" y="160" width="160" height="120" rx="6" fill="#0e639c" opacity="0.18" />
+
+  <!-- Arrow pointing to Explorer -->
+  <path class="arrow" d="M600 60 C520 60, 420 140, 300 180" />
+  <polygon points="300,180 292,168 312,172" fill="#ffcc00"/>
+
+  <!-- Labels -->
+  <text x="560" y="40" class="label">Drop files into the Explorer here</text>
+  <text x="560" y="64" class="label">(drop onto the folder in the left sidebar)</text>
+  <text x="40" y="30" class="label">Explorer (Files)</text>
+
+  <!-- Hint box -->
+  <rect x="520" y="90" width="250" height="70" rx="6" fill="#252526" stroke="#3a3a3a"/>
+  <text x="540" y="110" class="hint">Tip:</text>
+  <text x="540" y="130" class="label">Drop files onto the folder in the Explorer (left pane)</text>
+  <text x="540" y="150" class="label">If files open in tabs, close them and re-drop into Explorer.</text>
+</svg>

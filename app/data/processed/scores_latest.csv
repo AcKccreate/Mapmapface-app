@@ -1,0 +1,3 @@
+facility_id,facility_name,city,state,specialty,lat,lon,beds,avg_volume,likely_procedures,pay_expect,bill_expect,active_posting,postings_90d,postings_365d,last_post_days,competitor_postings_30d,census_index,seasonality_index,turnover_index,credentialing_days,score,high_likelihood
+BRGH-UT-001,Bright River General Hospital,Midvale,UT,HO,40.6111,-111.8999,200,16-18,Lines; intubations rare,$190-205/hr,$215-230/hr,0,3,9,48,2,1.15,1.1,45,1,1.0,True
+BRGH-UT-002,Bright River Children's Hosp,Midvale,UT,PDH,40.612,-111.9,120,8-10,Lines; peds,$210-230/hr,$235-255/hr,0,2,6,60,1,1.25,1.05,30,0,0.0,False

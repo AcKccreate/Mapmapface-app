@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Copy co-pilot request</title>
+</head>
+<body>
+  <h3>Copy the request for your Teams co-pilot</h3>
+  <pre id="text">Hi — can you paste a clarified, copy‑ready set of changes I should apply to the repo? Please include only plain text (no secrets). I need:
+
+1. Exact file paths and full file contents to add or replace (e.g., `app/scripts/train_predictor.py`, `app/pages/1_Map.py`, `.github/workflows/locum-agent.yml`).
+2. Required env vars and example values (placeholders only), plus which email route to enable: SMTP or Power Automate.
+3. Exact CSV schemas and 1–3 sample rows for:
+   - `app/data/processed/facility_features.csv`
+   - `app/data/processed/contacts.csv`
+4. Any column-name mappings if your expected names differ from the repo.
+5. A 2-line “how to run” snippet to verify locally (commands to run).
+
+No secrets, please — I’ll add those to GitHub/Streamlit secrets later. Thanks!</pre>
+  <button id="copy">Copy to clipboard</button>
+  <script>
+    document.getElementById('copy').addEventListener('click', async () => {
+      const text = document.getElementById('text').innerText;
+      try {
+        await navigator.clipboard.writeText(text);
+        alert('Copied to clipboard');
+      } catch (e) {
+        alert('Copy failed — select and copy manually');
+      }
+    });
+  </script>
+</body>
+</html>
